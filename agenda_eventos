@@ -1,0 +1,56 @@
+
+class Evento: #Maiza
+    def __init__(self,titulo,data,hora,local):
+        self.titulo = titulo
+        self.data = data
+        self.hora = hora
+        self.local = local
+
+    def __str__(self): #Julia
+        print ('Informações do evento:')
+        print ('Título: ',self.titulo)
+        print ('Data: ',self.data)
+        print ('Hora: ',self.hora)
+        print ('Local: ',self.local)
+
+
+class AgendaEventos: #Letícia
+    def __init__ (self):
+        self.eventos = []
+
+    def listar (self):
+        print ('Agenda de eventos: ')
+        for i, evento in enumerate(self.eventos):
+            print({i+1},' : ',self.eventos)
+
+    def adicionar(self,evento):
+        self.eventos.append(evento)
+
+    def remover(self,i):
+        if i < len(self.eventos):
+            del self.eventos[i]
+        else:
+            print('Erro')
+
+    def editar(self,i,eventonovo):
+        if i < len(self.eventos):
+            self.eventos[i] = eventonovo
+        else:
+            print('Erro')
+        
+
+agenda = AgendaEventos() #Mariana
+
+evento1 = Evento('Casamento','22-05-2024','16:30','Igreja Nossa Senhora do Ó')
+evento2 = Evento('Aniversário de Pedro','19-04-2024','18:00','Restaurante circles')
+evento3 = Evento('Reunião mensal','18-06-2024','09:30','Sala de Reunião')
+
+agenda.adicionar(evento1) #Wildson
+agenda.adicionar(evento2)
+agenda.adicionar(evento3)
+
+agenda.listar()
+
+agenda.remover(1)
+
+agenda.listar()
